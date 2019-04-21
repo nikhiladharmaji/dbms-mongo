@@ -1,0 +1,18 @@
+<div id="welcome">
+  <div class="container">
+    <div class="text-center heading">
+      <h1 class="display-4">Welcome</h1>
+    </div>
+    <div class="row details">
+      <div class="col-sm">
+        <div class="list-group">
+          <a href="/add-appointments" class="list-group-item list-group-item-action">Add Appointment</a>
+          <a href="/pending-appointments" class="list-group-item list-group-item-action">View Pending Appointments</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-view></router-view>
+
+ </div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
