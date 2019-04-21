@@ -16,10 +16,6 @@ module.exports = {
 
 
   exits: {
-     success: {
-      viewTemplatePath: 'pages/pending-appointments'
-    }
-
   },
 
 

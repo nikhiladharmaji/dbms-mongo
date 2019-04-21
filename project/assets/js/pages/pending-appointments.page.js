@@ -38,13 +38,23 @@ parasails.registerPage('pending-appointments', {
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
+    clicked: async function(appointmentId) {
+
+      $.ajax({
+          url: '/api/v1/appointments/update-status',
+          data: { id: appointmentId },
+          type: 'PUT',
+          success: function(result) {
+            window.location = '/pending-appointments';
+          }
+      });
+    },
     submittedForm: async function() {
-      console.log("here");
       // Redirect to the logged-in dashboard on success.
       // > (Note that we re-enable the syncing state here.  This is on purpose--
       // > to make sure the spinner stays there until the page navigation finishes.)
       this.syncing = true;
-      window.location = '/';
+      window.location = '/pending-appointments';
     }
 
   }
